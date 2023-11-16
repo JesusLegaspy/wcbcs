@@ -1,9 +1,10 @@
-package dev.legaspy.wcbcs;
+package com.jlegaspy.wcbcs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 public class WcbcsApplication {
 
 	public static void main(String[] args) {
