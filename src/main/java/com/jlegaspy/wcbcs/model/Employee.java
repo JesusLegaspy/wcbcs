@@ -1,4 +1,4 @@
-package com.jlegaspy.wcbcs;
+package com.jlegaspy.wcbcs.model;
 
 import java.util.Objects;
 
@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Employee {
+public class Employee {
 
   private @Id @GeneratedValue Long id;
   private String name;
@@ -16,7 +16,7 @@ class Employee {
   Employee() {
   }
 
-  Employee(String name, String role) {
+  public Employee(String name, String role) {
 
     this.name = name;
     this.role = role;
@@ -49,10 +49,8 @@ class Employee {
   @Override
   public boolean equals(Object o) {
 
-    if (this == o)
-      return true;
-    if (!(o instanceof Employee))
-      return false;
+    if (this == o) return true;
+    if (!(o instanceof Employee)) return false;
     Employee employee = (Employee) o;
     return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name)
         && Objects.equals(this.role, employee.role);
