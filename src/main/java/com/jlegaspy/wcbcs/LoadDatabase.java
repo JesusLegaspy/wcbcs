@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import com.jlegaspy.wcbcs.model.Arc;
 import com.jlegaspy.wcbcs.model.Book;
 import com.jlegaspy.wcbcs.model.Chapter;
-import com.jlegaspy.wcbcs.model.CharacterImportance;
+import com.jlegaspy.wcbcs.model.PersonaImportance;
 import com.jlegaspy.wcbcs.model.Employee;
 import com.jlegaspy.wcbcs.model.Persona;
 import com.jlegaspy.wcbcs.repository.ArcRepository;
@@ -52,10 +52,10 @@ class LoadDatabase {
 
   @Bean
   CommandLineRunner initChapterDatabase(ChapterRepository repository) {
-    ArrayList<CharacterImportance> characterImportance = new ArrayList<CharacterImportance>();
-    characterImportance.add(new CharacterImportance(1234L, 8));
+    ArrayList<PersonaImportance> personaImportance = new ArrayList<PersonaImportance>();
+    personaImportance.add(new PersonaImportance(1234L, 8));
     return args -> {
-      log.info("Preloading " + repository.save(new Chapter(3, characterImportance)));
+      log.info("Preloading " + repository.save(new Chapter(3, personaImportance)));
     };
   }
 

@@ -13,14 +13,14 @@ public class Chapter {
   private Integer chapterNumber;
 
   @ElementCollection
-  private List<CharacterImportance> characterImportances;
+  private List<PersonaImportance> personaImportances;
 
   public Chapter() {
   }
 
-  public Chapter(Integer chapterNumber, List<CharacterImportance> characterImportances) {
+  public Chapter(Integer chapterNumber, List<PersonaImportance> personaImportances) {
     this.chapterNumber = chapterNumber;
-    this.characterImportances = characterImportances;
+    this.personaImportances = personaImportances;
   }
 
   public Long getId() {
@@ -39,11 +39,11 @@ public class Chapter {
     this.chapterNumber = chapterNumber;
   }
 
-  public List<CharacterImportance> getCharacterImportances() {
-    return characterImportances;
+  public List<PersonaImportance> getPersonaImportances() {
+    return personaImportances;
   }
 
-  public void setCharacterImportances(List<CharacterImportance> characterImportances) {
-    this.characterImportances = characterImportances;
+  public void setPersonaImportances(List<PersonaImportance> personaImportances) {
+    this.personaImportances = personaImportances;
   }
 }

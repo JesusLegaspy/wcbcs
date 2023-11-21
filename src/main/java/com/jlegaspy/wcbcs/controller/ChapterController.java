@@ -41,7 +41,7 @@ public class ChapterController {
   Chapter replaceChapter(@RequestBody Chapter newChapter, @PathVariable Long id) {
     return repository.findById(id).map(chapter -> {
       chapter.setChapterNumber(newChapter.getChapterNumber());
-      chapter.setCharacterImportances(newChapter.getCharacterImportances());
+      chapter.setPersonaImportances(newChapter.getPersonaImportances());
       return repository.save(chapter);
     }).orElseGet(() -> {
       newChapter.setId(id);
