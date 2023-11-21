@@ -16,7 +16,7 @@ public class Book {
   private String image;
   private List<Long> chapterIds;
 
-  Book() {
+  public Book() {
   }
 
   public Book(String title, Long arkId, Integer series, String image, List<Long> chapterIds) {
