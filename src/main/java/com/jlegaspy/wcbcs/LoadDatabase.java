@@ -13,27 +13,16 @@ import com.jlegaspy.wcbcs.model.Arc;
 import com.jlegaspy.wcbcs.model.Book;
 import com.jlegaspy.wcbcs.model.Chapter;
 import com.jlegaspy.wcbcs.model.PersonaImportance;
-import com.jlegaspy.wcbcs.model.Employee;
 import com.jlegaspy.wcbcs.model.Persona;
 import com.jlegaspy.wcbcs.repository.ArcRepository;
 import com.jlegaspy.wcbcs.repository.BookRepository;
 import com.jlegaspy.wcbcs.repository.ChapterRepository;
-import com.jlegaspy.wcbcs.repository.EmployeeRepository;
 import com.jlegaspy.wcbcs.repository.PersonaRepository;
 
 @Configuration
 class LoadDatabase {
 
   private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
-
-  @Bean
-  CommandLineRunner initEmployeeDatabase(EmployeeRepository repository) {
-
-    return args -> {
-      log.info("Preloading " + repository.save(new Employee("Bilbo Baggins", "burglar")));
-      log.info("Preloading " + repository.save(new Employee("Frodo Baggins", "thief")));
-    };
-  }
 
   @Bean
   CommandLineRunner initBookDatabase(BookRepository repository) {
