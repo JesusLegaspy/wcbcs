@@ -28,7 +28,7 @@ class LoadDatabase {
   CommandLineRunner initBookDatabase(BookRepository repository) {
     return args -> {
       log.info("Preloading " + repository
-          .save(new Book("Harry Potter", Long.valueOf(0), 1, "path", new ArrayList<Long>(Arrays.asList(1L, 2L, 3L)))));
+          .save(new Book("Harry Potter", Long.valueOf(1), 1, "path", new ArrayList<Long>(Arrays.asList(1L)))));
     };
   }
 
@@ -42,9 +42,9 @@ class LoadDatabase {
   @Bean
   CommandLineRunner initChapterDatabase(ChapterRepository repository) {
     ArrayList<PersonaImportance> personaImportance = new ArrayList<PersonaImportance>();
-    personaImportance.add(new PersonaImportance(1234L, 8));
+    personaImportance.add(new PersonaImportance(1L, 3));
     return args -> {
-      log.info("Preloading " + repository.save(new Chapter(3, personaImportance)));
+      log.info("Preloading " + repository.save(new Chapter(1, personaImportance)));
     };
   }
 

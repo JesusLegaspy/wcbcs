@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 public class Book {
   private @Id @GeneratedValue Long id;
   private String title;
-  private Long arkId;
+  private Long arcId;
   private Integer series;
   private String image;
   private List<Long> chapterIds;
@@ -19,9 +19,9 @@ public class Book {
   public Book() {
   }
 
-  public Book(String title, Long arkId, Integer series, String image, List<Long> chapterIds) {
+  public Book(String title, Long arcId, Integer series, String image, List<Long> chapterIds) {
     this.title = title;
-    this.arkId = arkId;
+    this.arcId = arcId;
     this.series = series;
     this.image = image;
     this.chapterIds = chapterIds;
@@ -43,12 +43,12 @@ public class Book {
     this.title = title;
   }
 
-  public Long getArkId() {
-    return arkId;
+  public Long getArcId() {
+    return arcId;
   }
 
-  public void setArkId(Long arkId) {
-    this.arkId = arkId;
+  public void setArcId(Long arcId) {
+    this.arcId = arcId;
   }
 
   public Integer getSeries() {
@@ -81,18 +81,18 @@ public class Book {
     if (!(o instanceof Book)) return false;
     Book book = (Book) o;
     return Objects.equals(this.id, book.id) && Objects.equals(this.title, book.title)
-        && Objects.equals(this.arkId, book.arkId) && Objects.equals(this.series, book.series)
+        && Objects.equals(this.arcId, book.arcId) && Objects.equals(this.series, book.series)
         && Objects.equals(this.image, book.image) && Objects.equals(this.chapterIds, book.chapterIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(this.id, this.title, this.arkId, this.series, this.image, this.chapterIds);
+    return Objects.hash(this.id, this.title, this.arcId, this.series, this.image, this.chapterIds);
   }
 
   @Override
   public String toString() {
-    return String.format("Book{id=%d, title=%s, arkId=%d, series=%d, image=%s, chapterIds=%s}", this.id, this.title,
-        this.arkId, this.series, this.image, this.chapterIds);
+    return String.format("Book{id=%d, title=%s, arcId=%d, series=%d, image=%s, chapterIds=%s}", this.id, this.title,
+        this.arcId, this.series, this.image, this.chapterIds);
   }
 }

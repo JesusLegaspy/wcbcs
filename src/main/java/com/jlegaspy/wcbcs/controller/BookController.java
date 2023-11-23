@@ -42,7 +42,7 @@ public class BookController {
   Book replaceBook(@RequestBody Book newBook, @PathVariable Long id) {
     return repository.findById(id).map(book -> {
       book.setTitle(newBook.getTitle());
-      book.setArkId(newBook.getArkId());
+      book.setArcId(newBook.getArcId());
       book.setSeries(newBook.getSeries());
       book.setImage(newBook.getImage());
       book.setChapterIds(newBook.getChapterIds());

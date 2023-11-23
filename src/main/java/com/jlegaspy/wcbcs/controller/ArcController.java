@@ -38,7 +38,7 @@ public class ArcController {
   }
 
   @PutMapping("/arcs/{id}")
-  Arc replaceArk(@RequestBody Arc newArc, @PathVariable Long id) {
+  Arc replaceArc(@RequestBody Arc newArc, @PathVariable Long id) {
 
     return repository.findById(id).map(arc -> {
       arc.setTitle(newArc.getTitle());
